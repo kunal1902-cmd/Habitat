@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/show.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("navbar.ejs") %>
+    <div class="details-container">
+
+    <h1><%= listing.title %></h1>
+
+    <img
+        src="<%= listing.image.url %>"
+        alt="<%= listing.title %>"
+        class="details-image"
+    >
+
+    <p><%= listing.description %></p>
+
+    <h3>Price: ₹<%= listing.price.toLocaleString("en-IN") %></h3>
+
+    <p>Location: <%= listing.location %></p>
+    <p>Country: <%= listing.country %></p>
+
+    <div class="actions">
+        <a href="/listings/<%= listing._id %>/edit">
+            <button type="button">Edit</button>
+        </a>
+
+        <form action="/listings/<%= listing._id %>/book" method="POST">
+            <button type="submit">Book Now</button>
+        </form>
+
+        <form action="/listings/<%= listing._id %>/favorite" method="POST">
+            <button class="favorite-btn" type="submit">♡ Add to Favorites</button>
+        </form>
+
+        <form action="/listings/<%= listing._id %>/delete?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+
+</div>
+<br>
+    <br>
+   
+<%- include("footer.ejs") %>
+</body>
+</html>

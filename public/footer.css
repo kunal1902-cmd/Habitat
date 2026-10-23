@@ -1,0 +1,120 @@
+
+/* Footer */
+.site-footer {
+    background: #172033;
+    color: #f1f5f9;
+    padding: 55px 7% 20px;
+    width:100%;
+    margin-bottom: 0;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #8b9cff;
+    color: #172033;
+    border-radius: 12px;
+    font-size: 28px;
+}
+
+.footer-brand p {
+    max-width: 320px;
+    color: #aab5c8;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 8px 0 10px;
+}
+
+.footer-column a {
+    color: #aab5c8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.25s ease, transform 0.25s ease;
+    width: fit-content;
+}
+
+.footer-column a:hover {
+    color: #a5b4fc;
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 22px;
+    border-top: 1px solid #354056;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    color: #8995aa;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .site-footer {
+        padding: 40px 6% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

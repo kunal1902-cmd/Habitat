@@ -1,0 +1,221 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 18px 30px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+body {
+    min-height: 100vh;
+    
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(194, 205, 255, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(224, 201, 255, 0.45),
+            transparent 35%
+        ),
+        #f6f7fc;
+
+    background-attachment: fixed;
+}
+
+/* Main details container */
+
+.details-container {
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 140px);
+    margin: 0;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.65);
+}
+
+
+/* Property title */
+.details-container h1 {
+    font-size: clamp(26px, 4vw, 38px);
+    margin-bottom: 24px;
+    color: #1e293b;
+    overflow-wrap: anywhere;
+}
+
+/* Property image */
+.details-image {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+
+    border-radius: 18px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Description */
+.details-container > p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+/* Price */
+.details-container h3 {
+    font-size: 25px;
+    color: #fe424d;
+    margin: 22px 0;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.actions form {
+    display: flex;
+}
+
+.actions button,
+.actions a {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.actions button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* Edit button */
+.actions a button {
+    background: rgba(255, 255, 255, 0.65);
+    color: #334155;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.actions a {
+    margin-left: auto;
+}
+
+/* Book Now button */
+.actions form:nth-of-type(1) button {
+    background: #fe424d;
+    color: white;
+    box-shadow: 0 5px 15px rgba(254, 66, 77, 0.25);
+}
+
+/* Favorite button */
+.actions form:nth-of-type(2) button {
+    background: rgba(255, 255, 255, 0.65);
+    color: #e11d48;
+    border: 1px solid rgba(225, 29, 72, 0.2);
+}
+.favorite-btn {
+    padding: 12px 22px;
+    border: 1px solid #e05270;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #d83f60;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.favorite-btn:hover {
+    background: #e05270;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hover effects */
+.actions button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(31, 38, 135, 0.18);
+}
+
+.actions form:nth-of-type(1) button:hover {
+    background: #e9323d;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    body {
+        padding: 85px 12px 25px;
+    }
+
+    .details-container {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .details-image {
+        height: 260px;
+    }
+
+    .details-container > p {
+        font-size: 15px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button,
+    .actions a,
+    .actions form {
+        width: 100%;
+    }
+
+    .actions button {
+        text-align: center;
+    }
+}

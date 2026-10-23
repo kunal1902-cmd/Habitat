@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/listing.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<%- include("navbar.ejs") %>
+
+<div class="cards-container">
+    <% for (let res of result) { %>
+
+        <a href="/listings/<%= res._id %>" class="card-link">
+            <div class="card">
+
+                <img
+                    src="<%= res.image.url %>"
+                    alt="<%= res.title %>"
+                >
+
+                <div class="card-content">
+                    <h2><%= res.title %></h2>
+                    <p class="price">₹<%= res.price.toLocaleString("en-IN") %></p>
+                    <p><%= res.location %>, <%= res.country %></p>
+                </div>
+
+            </div>
+        </a>
+
+    <% } %>
+    <%- include("footer.ejs") %>
+</div>
+
+   
+</body>
+</html>
