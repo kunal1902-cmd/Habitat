@@ -117,7 +117,7 @@ This project was developed to practice full-stack web development, including CRU
 
 **Your Name**
 
-- GitHub: YOUR_GITHUB_PROFILE_URL
+- GitHub: https://github.com/kunal1902-cmd
 
 ---
 
