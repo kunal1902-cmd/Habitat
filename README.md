@@ -34,9 +34,14 @@ habitat/
 │   ├── listing.js
 │   └── favorite.js
 ├── public/
-│   ├── css/
-│   ├── js/
-│   └── images/
+│   ├── about.css
+│   ├── favorite.css
+│   ├── favorite.js
+│   ├── footer.css
+│   ├── listing.css
+│   ├── navbar.css
+│   ├── new.css
+│   └── show.css
 ├── views/
 │   ├── listings.ejs
 │   ├── show.ejs
