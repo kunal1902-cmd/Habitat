@@ -30,6 +30,9 @@ Habitat is a real estate listing web application that allows users to explore pr
 
 ```text
 habitat/
+├── init/
+│   ├── data.js
+│   └── index.js
 ├── models/
 │   ├── listing.js
 │   └── favorite.js
