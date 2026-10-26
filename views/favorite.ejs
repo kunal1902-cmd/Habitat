@@ -35,68 +35,75 @@
 
         <% } else { %>
 
-            <div class="favorites-grid">
-                <% for (const favorite of favorites) { %>
-                    <% if (favorite.listing) { %>
-                        <article class="favorite-card">
+            
+                 
 
-                            <a
-                                class="favorite-image-link"
-                                href="/listings/<%= favorite.listing._id %>"
-                            >
-                                <img
-                                    src="<%= favorite.listing.image.url %>"
-                                    alt="<%= favorite.listing.title %>"
+                <div class="favorites-grid">
+
+                    
+                    
+                    <% for (const favorite of favorites) { %>
+                        <% if (favorite.listing) { %>
+                            
+                            <article class="favorite-card">
+
+                                <a
+                                    class="favorite-image-link"
+                                    href="/listings/<%= favorite.listing._id %>"
                                 >
-                            </a>
+                                    <img
+                                        src="<%= favorite.listing.image.url %>"
+                                        alt="<%= favorite.listing.title %>"
+                                    >
+                                </a>
 
-                            <div class="favorite-content">
-                                <h2>
-                                    <%= favorite.listing.title %>
-                                </h2>
+                                <div class="favorite-content">
+                                    <h2>
+                                        <%= favorite.listing.title %>
+                                 </h2>
                                 
 
-                                <h3>
-                                    ₹<%= Number(favorite.listing.price).toLocaleString("en-IN") %>
-                                </h3>
-                                <p>
-                                    <%= favorite.listing.location %>,
-                                    <%= favorite.listing.country %>
+                                    <h3>
+                                        ₹<%= Number(favorite.listing.price).toLocaleString("en-IN") %>
+                                 </h3>
+                                    <p>
+                                        <%= favorite.listing.location %>,
+                                     <%= favorite.listing.country %>
                                 </p>
 
                                 
 
-                                <div class="favorite-actions">
-                                    <a
-                                        href="/listings/<%= favorite.listing._id %>"
-                                        class="view-btn"
-                                    >
-                                        View Property
-                                    </a>
+                                    <div class="favorite-actions">
+                                        <br>
+                                        <br>                
+                                    
 
-                                    <form
-                                        action="/favorite/<%= favorite._id %>/remove?_method=DELETE" method="POST"
-                                        method="POST"
-                                    >
-                                        <button
-                                            type="submit"
-                                            class="remove-btn"
-                                            aria-label="Remove from favorites"
-                                        >
-                                            ♥ Remove
-                                        </button>
-                                    </form>
+                                        <form
+                                         action="/favorite/<%= favorite._id %>/remove?_method=DELETE" method="POST"
+                                            method="POST"
+                                     >
+                                            <button
+                                                type="submit"
+                                                class="remove-btn"
+                                                aria-label="Remove from favorites"
+                                            >
+                                                ♥ Remove
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </article>
+                            </article>
+                            
+                        <% } %>
                     <% } %>
-                <% } %>
-            </div>
+                    
+                </div>
+           
 
         <% } %>
     </main>
-    <script src="/favorite.js"></script>
+    
 
     <%- include("footer.ejs") %>
 

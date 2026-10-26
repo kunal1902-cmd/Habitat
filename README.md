@@ -39,7 +39,6 @@ habitat/
 ├── public/
 │   ├── about.css
 │   ├── favorite.css
-│   ├── favorite.js
 │   ├── footer.css
 │   ├── listing.css
 │   ├── navbar.css

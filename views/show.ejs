@@ -35,7 +35,7 @@
         </form>
 
         <form action="/listings/<%= listing._id %>/favorite" method="POST">
-            <button class="favorite-btn" type="submit">♡ Add to Favorites</button>
+            <button id="favoriteBtn" class="favorite-btn" type="submit">♡ Add to Favorites</button>
         </form>
 
         <form action="/listings/<%= listing._id %>/delete?_method=DELETE" method="POST">
@@ -46,6 +46,7 @@
 </div>
 <br>
     <br>
+    
    
 <%- include("footer.ejs") %>
 </body>

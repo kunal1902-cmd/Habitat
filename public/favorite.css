@@ -21,6 +21,7 @@ body {
         #f6f7fc;
     margin: 0;
     padding: 0;
+    
 }
 .navbar {
     width: 100%;
@@ -77,6 +78,7 @@ body {
     box-shadow: 0 12px 35px rgba(40, 50, 100, 0.08);
     backdrop-filter: blur(12px);
     transition: transform 0.25s ease;
+    text-decoration: none;
 }
 
 .favorite-card:hover {
