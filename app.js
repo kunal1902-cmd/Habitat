@@ -7,6 +7,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ejs = require("ejs");
+require("dotenv").config();
 
 app.set("view engine", "ejs");
 app.engine("ejs", ejsMate);
@@ -17,15 +18,18 @@ app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 
 
-async function connectDB(){
-    try{
-        await mongoose.connect('mongodb://127.0.0.1:27017/habitat');
-        console.log("Connected to MongoDB");    
+async function connectDB() {
+    try {
+        await mongoose.connect(process.env.MONGO_URL);
+        console.log("Connected to MongoDB Atlas");
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
+        process.exit(1);
     }
 }
+
 connectDB();
+
 
 
 // home page
